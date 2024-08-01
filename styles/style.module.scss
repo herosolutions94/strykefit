@@ -80,6 +80,8 @@
   gap: 10px;
   max-width: 24rem;
   float: left;
+  position: relative;
+  z-index: 1000;
   height: 6rem;
   h3 {
     color: $primary-color;

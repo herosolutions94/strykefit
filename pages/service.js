@@ -114,16 +114,11 @@ export default function Home() {
           <div className="flex">
             <div className="col">
               <div className="inner">
-                <div className="icon">
+                {/* <div className="icon">
                   <div className="inner_icon">
-                    {/* <Image
-                      src="/images/rocket.png"
-                      alt=""
-                      width={200}
-                      height={200}
-                    /> */}
+                
                   </div>
-                </div>
+                </div> */}
                 <h4>Standard</h4>
                 <p>For the basics</p>
                 <h1>$15</h1>
@@ -143,16 +138,6 @@ export default function Home() {
             </div>
             <div className="col">
               <div className="inner">
-                <div className="icon">
-                  <div className="inner_icon">
-                    {/* <Image
-                      src="/images/rocket.png"
-                      alt=""
-                      width={200}
-                      height={200}
-                    /> */}
-                  </div>
-                </div>
                 <h4>Unlimited</h4>
                 <p>For the professionals</p>
                 <h1>$99</h1>
@@ -172,16 +157,6 @@ export default function Home() {
             </div>
             <div className="col">
               <div className="inner">
-                <div className="icon">
-                  <div className="inner_icon">
-                    {/* <Image
-                      src="/images/rocket.png"
-                      alt=""
-                      width={200}
-                      height={200}
-                    /> */}
-                  </div>
-                </div>
                 <h4>Premium</h4>
                 <p>For small team</p>
                 <h1>$55</h1>

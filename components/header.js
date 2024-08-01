@@ -15,7 +15,9 @@ export default function Header() {
     <header>
       <div className="contain">
         <div className="logoflx">
-          <h3>StrykeFit</h3>
+          <Link href="/">
+            <h3>StrykeFit</h3>
+          </Link>
           <div className="logo">
             <Link href="/">
               <img src="/images/logo.svg" alt="" />
@@ -40,7 +42,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/services" onClick={ToggleAction}>
+              <Link href="/service" onClick={ToggleAction}>
                 Services
               </Link>
             </li>
