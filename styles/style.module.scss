@@ -711,11 +711,11 @@
             margin-bottom: 15px;
           }
           .input {
-            background: #2e2e2e;
+            background: #383737;
             border: 1.5px solid #373737;
             color: #fff;
             &::placeholder {
-              color: rgba($white, 0.5);
+              color: rgba($white, 0.7);
             }
           }
           .cta {
