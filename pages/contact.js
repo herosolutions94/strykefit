@@ -11,7 +11,7 @@ const Contact = () => {
               <div className="cols col1">
                 <div className="sec_heading">
                   <h2>VISIT US</h2>
-                  <h4>STRYKEFIT FITNESS STUDIO</h4>
+                  <h4>STRYKEFIT FITNESS STUDIO </h4>
                 </div>
                 <div className="sec_content">
                   <ul>
