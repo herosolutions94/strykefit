@@ -33,7 +33,7 @@ const Contact = () => {
                 </div>
                 <div className="socials">
                   <ul>
-                    <li>
+                    {/* <li>
                       <Link href="/" target="_blank" rel="noreferrer">
                         <img src="/images/facebook.svg" alt="" />
                       </Link>
@@ -42,17 +42,17 @@ const Contact = () => {
                       <Link href="/" target="_blank" rel="noreferrer">
                         <img src="/images/twitter.svg" alt="" />
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link href="/" target="_blank" rel="noreferrer">
                         <img src="/images/instagram.svg" alt="" />
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link href="/" target="_blank" rel="noreferrer">
                         <img src="/images/linkedin.svg" alt="" />
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>

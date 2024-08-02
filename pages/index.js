@@ -57,7 +57,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <ul className="socialbar">
+        {/* <ul className="socialbar">
           <li>
             <a>
               <img src="images/facebook.webp"></img>
@@ -78,7 +78,7 @@ export default function Home() {
               <img src="images/youtube.webp"></img>
             </a>
           </li>
-        </ul>
+        </ul> */}
       </section>
       <section id="red_zone">
         <div className="contain">
@@ -107,6 +107,85 @@ export default function Home() {
                 <Link href="/" className="site_btn">
                   Contact Us
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="server-setup">
+        <div class="contain">
+          <div class="sec_heading text-center">
+            <h2>Professional StrykeFit built by Experienced Trainers</h2>
+          </div>
+          <div class="flex">
+            <div class="col">
+              <div class="inner">
+                <div class="sm_icon">
+                  <img src="images/check.png" alt="" />
+                </div>
+                <div class="cntnt">
+                  <h3>Enhanced Mental Resilience</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="inner">
+                <div class="sm_icon">
+                  <img src="images/check.png" alt="" />
+                </div>
+                <div class="cntnt">
+                  <h3>Improved Physical Strength and Endurance</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="inner">
+                <div class="sm_icon">
+                  <img src="images/check.png" alt="" />
+                </div>
+                <div class="cntnt">
+                  <h3>Boosted Confidence and Self-Esteem</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="inner">
+                <div class="sm_icon">
+                  <img src="images/check.png" alt="" />
+                </div>
+                <div class="cntnt">
+                  <h3>Stress Relief and Mental Clarity</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="inner">
+                <div class="sm_icon">
+                  <img src="images/check.png" alt="" />
+                </div>
+                <div class="cntnt">
+                  <h3>Community and Support System</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="inner">
+                <div class="sm_icon">
+                  <img src="images/check.png" alt="" />
+                </div>
+                <div class="cntnt">
+                  <h3>Holistic Health and Wellness</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="inner">
+                <div class="sm_icon">
+                  <img src="images/check.png" alt="" />
+                </div>
+                <div class="cntnt">
+                  <h3>Goal-Oriented Training</h3>
+                </div>
               </div>
             </div>
           </div>
@@ -182,7 +261,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="program">
+      {/* <section id="program">
         <div className="contain">
           <div className="content_center">
             <h2>OUR PROGRAMS</h2>
@@ -238,7 +317,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
       <section id="trainer">
         <div className="contain">
           <div className="content_center">

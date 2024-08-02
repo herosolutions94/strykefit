@@ -65,18 +65,18 @@ export default function Footer() {
                 </li>
               </ul>
               <div className="social_logon">
-                <Link href="/" target="_blank" rel="noreferrer">
+                {/* <Link href="/" target="_blank" rel="noreferrer">
                   <img src="/images/facebook.svg" alt="" />
                 </Link>
                 <Link href="/" target="_blank" rel="noreferrer">
                   <img src="/images/twitter.svg" alt="" />
-                </Link>
+                </Link> */}
                 <Link href="/" target="_blank" rel="noreferrer">
                   <img src="/images/instagram.svg" alt="" />
                 </Link>
-                <Link href="/" target="_blank" rel="noreferrer">
+                {/* <Link href="/" target="_blank" rel="noreferrer">
                   <img src="/images/linkedin.svg" alt="" />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

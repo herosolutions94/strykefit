@@ -37,7 +37,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/about" onClick={ToggleAction}>
+              <Link href="#about" onClick={ToggleAction}>
                 About
               </Link>
             </li>
@@ -51,24 +51,24 @@ export default function Header() {
                 Program List
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/Book-now" onClick={ToggleAction}>
                 Book Now
               </Link>
-            </li>
+            </li> */}
             <li>
-              <Link href="/contact" onClick={ToggleAction}>
+              <Link href="/contact" onClick={ToggleAction} className="site_btn">
                 Contact Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/login">Login</Link>
             </li>
             <li className="btn_blk">
               <Link href="/signup" className="site_btn">
                 Register
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
 

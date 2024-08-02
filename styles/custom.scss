@@ -211,7 +211,7 @@ h4 {
 .toggle {
   @include flex(center);
   display: none;
-  @include pos($l: 16px, $r: null, $z: 4, $t: -0.7px);
+  @include pos($l: null, $r: 16px, $z: 4, $t: -32px);
   // width: 2rem;
   // height: 1.6rem;
   width: 1.6rem;
@@ -238,7 +238,7 @@ h4 {
     height: 0.2rem;
     width: 14px;
     border-radius: 10px;
-    background: $gray;
+    background: $primary-color;
     @include trans;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -2447,6 +2447,9 @@ header {
           &.active {
             a {
               color: $primary-color !important;
+              @include ipad_sm {
+                color: $black !important;
+              }
             }
           }
         }
@@ -2675,7 +2678,9 @@ header {
       max-width: 14rem;
     }
     @include ipad_sm {
-      margin-left: 3rem;
+      margin-left: 0rem;
+      height: 5rem;
+      max-width: 5rem;
     }
   }
   .session_header & {
@@ -2833,6 +2838,9 @@ nav {
         &:hover,
         &.active {
           color: $primary-color !important;
+        }
+        @include ipad_sm {
+          color: $black !important;
         }
       }
       &.active a {
@@ -2994,6 +3002,8 @@ footer {
   overflow: hidden;
   // border-top: 2px solid rgb(184 184 184 / 19%);
   background-image: url(../public/images/footer-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   .mid_col {
     @include flex(center, center);
     align-items: unset;
