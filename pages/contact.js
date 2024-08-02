@@ -1,9 +1,38 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
+const[isFormProcessing, setiIsFormProcessing] = useState(false);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+    setValue,
+  } = useForm();
+
+  const handleContactFormSubmit = async (data) => {
+    setiIsFormProcessing(true);
+
+    try {
+      const response = await axios.post("/api/contact", data);
+      toast.success(response.data.message);
+      reset();
+    } catch (error) {
+      toast.error(error.response?.data?.error || "An error occurred.");
+    }
+
+    setiIsFormProcessing(false);
+  };
+
+  
+
   return (
     <>
+    <Toaster position="bottom-right" />
       <main>
         <section className="contact_us">
           <div className="contain">
@@ -59,7 +88,7 @@ const Contact = () => {
               <div className="cols col2">
                 <div className="inner">
                   <h3>GET IN TOUCH</h3>
-                  <form>
+                  <form method="POST" onSubmit={handleSubmit(handleContactFormSubmit)}>
                     <div className="row">
                       <div className="col-md-12">
                         <div className="txtGrp">
@@ -67,8 +96,19 @@ const Contact = () => {
                             className="input"
                             type="text"
                             placeholder="Name"
+                            {...register("name", {
+                          required: "Name is required.",
+                          minLength: {
+                            value: 2,
+                            message: "Name should contains atleast 2 letters.",
+                          },
+                        })}
                           />
+                          <div className="validation-error" style={{ color: "red" }}>
+                      {errors.name?.message}
+                    </div>
                         </div>
+                        
                       </div>
                       <div className="col-md-12">
                         <div className="txtGrp">
@@ -76,7 +116,18 @@ const Contact = () => {
                             className="input"
                             type="text"
                             placeholder="Email"
+                            {...register("email", {
+                          required: "Email is required.",
+                          pattern: {
+                            value:
+                              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                            message: "Please enter a valid email",
+                          },
+                        })}
                           />
+                          <div className="validation-error" style={{ color: "red" }}>
+                      {errors.email?.message}
+                    </div>
                         </div>
                       </div>
                       <div className="col-md-12">
@@ -85,7 +136,13 @@ const Contact = () => {
                             className="input"
                             type="text"
                             placeholder="Phone"
+                            {...register("phone", {
+                          required: "Phone Number is Required",
+                        })}
                           />
+                          <div className="validation-error" style={{ color: "red" }}>
+                      {errors.phone?.message}
+                    </div>
                         </div>
                       </div>
                       <div className="col-md-12">
@@ -94,20 +151,35 @@ const Contact = () => {
                             className="input"
                             type="text"
                             placeholder="Subject"
+                            {...register("subject", {
+                          required: "Subject is Required",
+                        })}
                           />
+                          <div className="validation-error" style={{ color: "red" }}>
+                      {errors.subject?.message}
+                    </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="txtGrp">
                           <textarea
                             className="input"
-                            placeholder="Message"></textarea>
+                            placeholder="Message" {...register("msg", {
+                          required: "Message is required.",
+                        })}></textarea>
+                        <div className="validation-error" style={{ color: "red" }}>
+                      {errors.msg?.message}
+                    </div>
                         </div>
                       </div>
                       <div className="col-md-12">
                         <div className="cta">
-                          <button type="button" className="site_btn">
-                            Submit
+                          <button type="submit" disabled={isFormProcessing} className="site_btn">
+                            Submit {isFormProcessing && (
+                    <i
+                      className={isFormProcessing ? "spinner" : "spinnerHidden"}
+                    ></i>
+                  )}
                           </button>
                         </div>
                       </div>
