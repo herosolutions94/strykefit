@@ -27,7 +27,7 @@ export default function Header() {
         <div
           className={toggle ? "toggle active" : "toggle"}
           onClick={ToggleAction}>
-          <span></span>
+          <span></span> 
         </div>
         <nav id="nav" className={toggle ? "active" : ""}>
           <ul>

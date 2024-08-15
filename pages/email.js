@@ -2,6 +2,7 @@ import { Html, Head, Body, Container, Row, Column, Text } from '@react-email/com
 
 const EmailTemplate = ({ name, email, phone, subject, message }) => (
   <Html>
+  
     <Head>
       <style>
         {`

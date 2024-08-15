@@ -3,7 +3,7 @@ import { render } from '@react-email/components';
 import sendgrid from '@sendgrid/mail';
 import EmailTemplate from '../email';
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY); // Use environment variable for API key
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY); 
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
