@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
+
 const Contact = () => {
 const[isFormProcessing, setiIsFormProcessing] = useState(false);
   const {
@@ -18,10 +19,11 @@ const[isFormProcessing, setiIsFormProcessing] = useState(false);
     setiIsFormProcessing(true);
 
     try {
-      const response = await axios.post("/api/contact", data);
+      const response = await axios.post("/api/sendEmail", data);
       toast.success(response.data.message);
       reset();
     } catch (error) {
+      console.error("Error sending email:", error);
       toast.error(error.response?.data?.error || "An error occurred.");
     }
 

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function Layout({ children }) {
   const router = useRouter();
   const path = router.pathname;
-  if ((path == "/signup") || (path == "/login") || (path == "/forgot-password") || (path == "/reset-password") || (path == "/trade-person-signup")) {
+  if ((path == "/signup") || (path == "/login") || (path == "/forgot-password") || (path == "/reset-password") || (path == "/trade-person-signup") || (path == "/email")) {
     return (
       <div className="content">
         <SiteMaster />
