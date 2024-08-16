@@ -39,7 +39,7 @@ console.log(data);
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      to: 'Support@strykefitlife.com',
+      to: 'herosolutions.tk@gmail.com',
       subject: 'Contact form query',
       html: htmlContent,
     }),
