@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
       const options = {
         from: email,
-        to: 'vesif46228@givehit.com',
+        to: 'support@strykefitlife.com',
         subject: subject,
         html: emailHtml,
       };

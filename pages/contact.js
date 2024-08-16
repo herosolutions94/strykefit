@@ -17,7 +17,9 @@ const[isFormProcessing, setiIsFormProcessing] = useState(false);
 
   const handleContactFormSubmit = async (data) => {
     setiIsFormProcessing(true);
+   // sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
+    
     try {
       const response = await axios.post("/api/sendEmail", data);
       toast.success(response.data.message);
@@ -27,6 +29,7 @@ const[isFormProcessing, setiIsFormProcessing] = useState(false);
       toast.error(error.response?.data?.error || "An error occurred.");
     }
 
+    console.log(data)
     
     setiIsFormProcessing(false);
   };
