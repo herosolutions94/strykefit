@@ -39,7 +39,7 @@ console.log(data);
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      to: 'herosolutions.tk@gmail.com',
+      to: 'justinlu10@gmail.com',
       subject: 'Contact form query',
       html: htmlContent,
     }),
