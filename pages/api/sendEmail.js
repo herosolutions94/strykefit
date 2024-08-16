@@ -1,32 +1,28 @@
-// pages/api/sendEmail.js
-import { render } from '@react-email/components';
-import sendgrid from '@sendgrid/mail';
-import EmailTemplate from '../email';
+// pages/api/send-email.js
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY); 
+import sgMail from '@sendgrid/mail';
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
+    const { to, subject, html } = req.body;
+
+    const msg = {
+      to,
+      from: 'Support@strykefitlife.com', // Your verified sender email
+      subject,
+      html,
+    };
+
     try {
-      const { name, email, phone, subject, msg } = req.body;
-
-      const emailHtml = render(<EmailTemplate name={name} email={email} phone={phone} subject={subject} message={msg} />);
-
-
-      const options = {
-        from: email,
-        to: 'support@strykefitlife.com',
-        subject: subject,
-        html: emailHtml,
-      };
-
-      await sendgrid.send(options);
-      res.status(200).json({ message: 'Email sent successfully.' });
+      await sgMail.send(msg);
+      res.status(200).json({ success: true, message: 'Email sent successfully!' });
     } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ error: 'Error sending email.' });
+      console.error(error);
+      res.status(500).json({ success: false, message: 'Failed to send email', error });
     }
   } else {
-    res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).json({ success: false, message: 'Method not allowed' });
   }
 }

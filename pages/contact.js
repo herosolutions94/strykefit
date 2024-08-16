@@ -17,21 +17,43 @@ const[isFormProcessing, setiIsFormProcessing] = useState(false);
 
   const handleContactFormSubmit = async (data) => {
     setiIsFormProcessing(true);
-  
+   // sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-    
-    try {
-      const response = await axios.post("/api/sendEmail", data);
-      toast.success(response.data.message);
-      reset();
-    } catch (error) {
-      console.error("Error sending email:", error);
-      toast.error(error.response?.data?.error || "An error occurred.");
-    }
+console.log(data);
+   
+   const htmlContent = `
+   <h2>Contact Query</h2>
+   <p><strong>Name:</strong> ${data.name}</p>
+   <p><strong>Email:</strong> ${data.email}</p>
+   <p><strong>Phone:</strong> ${data.phone}</p>
+   <p><strong>Subject:</strong> ${data.subject}</p>
+   <p><strong>Message:</strong> ${data.msg}</p>
+ `;
 
-    console.log(data)
-    
-    setiIsFormProcessing(false);
+
+ try{
+
+  const response = await fetch('/api/sendEmail', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      to: 'Support@strykefitlife.com',
+      subject: 'Contact form query',
+      html: htmlContent,
+    }),
+  });
+
+  const datanew = await response.json();
+  toast.success(datanew.message);
+
+
+ } catch {
+  toast.success(datanew.message);
+ }
+
+  setiIsFormProcessing(false);
   };
 
   
